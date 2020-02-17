@@ -4,7 +4,8 @@ const port = 3000;
 const bodyParser = require('body-parser');
 
 app.use(bodyParser.urlencoded({extended: false}));
-// app.use(express.static('public'));
+app.use(express.static('public'));
+app.use('/script', express.static(__dirname + '/script'));
 
 const indexRouter = require('./routes/index.js');
 const studyRouter = require('./routes/study.js');
